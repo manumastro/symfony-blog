@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <article>
+        <h2>Titlo dell'articolo</h2>
+        <div class="metadata">Scritto il {{ article.createdAt | date('d/m/Y') }} alle {{ article.createdAt | date('H:i') }} con categoria Symfony</div>
+        <div class="content">
+            <img class="mb-3" src="{{ article.image }}" alt="">
+            <div>
+                {{ article.contenuto | raw }}
+            </div>
+        </div>
+
+
+    </article>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+<setion class="article">
+    {% for article in articles  %}
+    <article>
+        <h2>{{ article.titolo }}</h2>
+        <div class="metadata">Scritto il {{ article.createdAt | date('d/m/Y') }} alle {{ article.createdAt | date('H:i') }} con categoria Symfony</div>
+        <div class="content">
+            <img src="{{ article.image }}" alt="">
+            {{ article.contenuto | raw }}
+            <a href="{{ path('blog_show', {'id': article.id}) }}" class="btn btn-primary mb-5">Leggi di piu</a></div>
+    </article>
+    {% endfor %}
+</setion>
+{% endblock %}
